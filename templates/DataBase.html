@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="{{url_for('static', filename='css/DataBaseDesign.css')}}" rel="stylesheet">
+        <script src="{{url_for('static', filename='js/DataBasectrl.js')}}" defer></script>
+    </head>
+    <body class="DataBasePage">
+        <h1><em>Database</em></h1>
+            <div class="options">
+                    <a class='selectbtn' href="{{url_for('menu')}}">Menu</a>
+                    <a class='selectbtn' href="{{url_for('calculator')}}">Calculator</a>
+            </div>
+            <div class="Structure-flex">
+             <div class="Structure">
+                <div class="Welcome-flex">
+                    <table class="Welcome">
+                        <tr>
+                            <td>
+                                <h2>
+                                    Welcome to the Database! Here you can create and select information to create your very own database filled out with your own information!
+                                </h2>
+                                <button>Close</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="database-flex">
+                    <button class="back">Back</button>
+                    <table class="Choices">
+                        <tr class="Settings">
+                            <td>
+                                Table Key
+                                <button>V</button>
+                            </td>
+                            <td class="rules">
+                                Add: create your columns for your database
+                            </td>
+                            <td class="rules">
+                                Insert: add values into the rows of the table
+                            </td>
+                            <td class="rules">
+                                Update: edit specific values in the table
+                            </td>
+                            <td class="rules">
+                                Remove: delete values/columns from the table entirely
+                            </td>
+                            <td class="rules">
+                                Clear: Empties the entire Database of all created columns and data.
+                            </td>
+                        </tr>
+                        
+                        <tr class="customize">
+                             <td>
+                                <button class="Add">Add</button>
+                            </td>
+                            
+                            <td>
+                                <button class="Insert">Insert</button>
+                            </td>
+
+                             <td>
+                                <button class="Update">Update</button>
+                            </td>
+                           
+                             <td>
+                                <button class="Remove">Remove</button>
+                            </td>
+                            <td>
+                                <button class="clear">Clear</button>
+                            </td>
+                        </tr>
+
+                        <tr class="addsettings">
+                            <td>
+                                <h2>Design your new column</h2>
+                            </td>
+                            <td>
+                                <div class="group">
+                                    Name
+                                <input id="name" name="name" value=""> 
+                                </div> 
+                            </td>
+                            <td>
+                                <div class="group">
+                                    <label for="select">Select a Dataype:</label>
+                                    <select class="select" name="option">
+                                        <option value="Integer">Integer</option>
+                                        <option value="Float">Float</option>
+                                        <option value="String">String</option>
+                                        <option value="Boolean">Boolean</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="group">
+                                <button class="submit">submit</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="insertsettings">
+                            <td>
+                                <h2>Submit values for your database</h2>
+                            </td>
+                            <td>
+                                <div class="group">
+                                    <label class="insertbox" for="insertbox">value</label>
+                                    <input id="insertbox" name="insertbox" value="">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="group">
+                                    <button class="submit"> submit</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="updatesettings">
+                            <td>
+                                <h2>Select a value to Update</h2>
+                            </td>
+                            <td>
+                                <div class="group">
+                                    <label class="updatebox" for="updatebox">Select a Column</label>
+                                    <select id="updatebox" name="option">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="group">
+                                    <button class="submit">Submit</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="group">
+                                    <label class="updatevalue" for="updatevalue">Assign a new Value</label>
+                                    <input id="updatevalue" name="updatevaluebox" value="">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="removesettings">
+                            <td>
+                                <h2>Submit column name to remove from your database</h2>
+                            </td>
+                            <td>
+                                <div class="group">
+                                    <label class="removebox" for="removebox">Column to Remove</label>
+                                    <select id="removebox" name="removebox">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="group">
+                                    <button class="submit">submit</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="database">
+                        <thead class="databasebox">
+                        <tr class="ColumnNames">
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+                <div class="alert">
+                <table>
+                    <tr>
+                        <td> 
+                        <h2>
+                            alert message
+                        </h2>
+                    </td>
+                    </tr>
+                </table>
+            </div> 
+            </div>
+    </body>
+</html>

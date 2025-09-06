@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="{{url_for('static', filename='css/CalcDesign.css')}}" rel="stylesheet">
+        <script src="{{url_for('static', filename='js/Calculatorfunc.js')}}" defer></script>
+    </head>
+    <body class="Calculatorpage">
+        <h1>
+           <em>Calculator</em></h1>
+            <div class="options">
+                    <a class='selectbtn' href="{{url_for('menu')}}">Menu</a>
+                    <a class='selectbtn' href="{{url_for('database')}}">Database</a>
+            </div>
+        <div class="Structure">
+            <button class="slider">Back to Top</button>
+            <div class="info">
+                <h2><em>Welcome to the Calculator App!</em> This very simple design allows you to 
+                    <br> compute basic mathematical equations with an online digital calculator.
+                </h2>
+                <ul class="infolist">
+                    <li>
+                        This calculator only computes two coeffecients at a time.
+                    </li>
+                    <li>
+                        The data of the past several calculations will be stored on <br>
+                        the side in a table. This table will update after each calculation.
+                    </li>
+                    <li>
+                        Along with the mouse, the keyboard keys also work to input values.
+                    </li>
+                    <li>
+                        certain keys such as "x" or "*" have the same usage in the calculator.
+                    </li>
+                </ul>
+                <button>Close</button>
+                <button class="open">Open</button>
+            </div>
+            <div class="calc-flex">
+                 <table class="Calculator">
+            <tr>
+              <td colspan="5">
+                <input id="numvalue" name="number" value="0">
+              </td>
+            </tr>
+            <tr>
+                <td><button class="btn" key-data="7">7</button></td>
+                <td><button class="btn" key-data="8">8</button></td>
+                <td><button class="btn" key-data="9">9</button></td>
+                <td><button class="negbtn">+/-</button></td>
+                <td><button class="delbtn">del</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn" key-data="4">4</button></td>
+                <td><button class="btn" key-data="5">5</button></td>
+                <td><button class="btn" key-data="6">6</button></td>
+                <td><button class="mulbtn" key-data="x">x</button></td>
+                <td><button class="divbtn" key-data="/">/</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn" key-data="1">1</button></td>
+                <td><button class="btn" key-data="2">2</button></td>
+                <td><button class="btn" key-data="3">3</button></td>
+                <td><button class="subbtn" key-data="-">-</button></td>
+                <td><button class="addbtn" key-data="+">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="clrbtn">C</button></td>
+                <td><button class="btn" key-data="0">0</button></td>
+                <td><button class="decbtn" key-data=".">.</button></td>
+                <td><button class="eqbtn">=</button></td>
+            </tr>
+          </table>
+            </div>
+            <div class="CalcData">
+                <h2>Recent Calculations</h2>
+                <button class="deldata">Clear Table Data</button>
+                <table class="calcTable">
+                    <tr>
+                        <th>Expression</th>
+                        <th>Result</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

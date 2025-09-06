@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="{{url_for('static', filename='css/MenuDesign.css')}}" rel="stylesheet">
+        <script src="{{url_for('static', filename='js/Menu.js')}}" defer></script>
+    </head>                       
+    <body class="MenuPage">
+         <h1><em>Menu</em></h1>
+            <div class="options">
+                    <a class='selectbtn' href="{{url_for('calculator')}}">Calculator</a>
+                    <a class='selectbtn' href="{{url_for('database')}}">Database</a>
+            </div>
+           <div class="structure">
+             <div class="menu-flex">
+                 <table class="menutable">
+                    <tr>
+                        <td>
+                            <h2>
+                            Welcome to Datacreate! This is the main menu page simply designed as an opening to the project. Data create contains two apps: 
+                            </h2> 
+                            <ul>
+                                <li>
+                                    Calculator: a basic calculator app capable of displaying and saving basic mathematical equations.
+                                </li>
+                                <li>
+                                    Database: a database constructor that allows you to create your own database containing whatever information you want!
+                                </li>
+                            </ul>
+                            <h2 class="bottom">
+                                When you are ready press the buttons near the top of the screen to go to each respective app!
+                            </h2>
+                        </td>
+                    </tr>
+                 </table>
+             </div>
+           </div>
+    </body>
+</html>
