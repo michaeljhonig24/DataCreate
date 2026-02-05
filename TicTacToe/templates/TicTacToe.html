@@ -1,0 +1,124 @@
+<DOCTYPE! html>
+<html>
+    <head>
+        <link href="{{url_for('static', filename='css/TicTacToeDesign.css')}}" rel="stylesheet">
+        <script src="{{url_for('static', filename='js/TicTacToe.js')}}" defer></script>
+    </head>
+    <body>
+        <table id="game-board">
+            <thead>
+                <tr>
+                     <th colspan="3">Tic-Tac-Toe</th>
+                </tr>
+                <tr>
+                    <th class="turn" colspan="3">Pick</th>
+                </tr>
+                <tr class="symbol-row">
+                    <th class="options"><button class="symbol-btn">X</button></th>
+                    <th class="options"><button class="symbol-btn">O</button></th>
+                </tr>         
+                <tr class="difficulty-row">
+                    <th><button class="difficulty-btn" data-difficulty="easy">Random <br>(Easy)</button></th>
+                    <th><button class="difficulty-btn" data-difficulty="medium">Trained <br>(Medium)</button></th>
+                    <th><button class="difficulty-btn" data-difficulty="hard">MiniMax<br>(Hard)</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                </tr>
+                <tr>
+                   <td><button></button></td>
+                   <td><button></button></td>
+                   <td><button></button></td>
+                </tr>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                </tr>      
+            </tbody>
+            <tfoot class="End">
+            <tr>
+                <td class="Tie">Tie!</td>
+            </tr>
+            <tr>
+                <td class="Restart"><button class="Restartbtn">Play Again?</button></td>
+            </tr>
+        </tfoot>
+        </table>
+
+        <button class="menu-toggle" aria-label="Toggle menu info">
+            <span class="menu-icon">🏠</span>
+        </button>
+
+        <div class="menu-panel">
+            <div class="menu-content">
+                <h2>Menu</h2>
+
+                <div class="menu-info">
+                    <table>
+                        <tbody>
+                            <tr class="menu-row">
+                                <th class="menus">
+                                    <a href="{{url_for('main')}}">
+                                        <button class="menu-btn">Home</button>
+                                    </a>
+                                </th>
+                            </tr>
+                            <tr class="menu-row">
+                                <th class="menus">
+                                    <a href="{{url_for('tictactoe.game')}}">
+                                        <button class="menu-btn">Tic-Tac-Toe</button>
+                                    </a>
+                                </th>
+                            </tr>
+                            <tr class="menu-row">
+                                <th class="menus">
+                                    <a href="{{url_for('checkers.game')}}">
+                                    <button class="menu-btn">Checkers</button>
+                                    </a>
+                                </th>
+                            </tr>
+                            <tr class="menu-row">
+                                <th class="menus">
+                                    <a href="{{url_for('connectfour.game')}}">
+                                        <button class="menu-btn">Connect Four</button>
+                                    </a>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <button class="info-toggle" aria-label="Toggle difficulty information">
+            <span class="info-icon">ℹ️</span>
+        </button>
+
+        <div class="info-panel">
+            <div class="info-content">
+                <h2>Difficulty Information</h2>
+
+                <div class="difficulty-info">
+                    <h3>Random (Easy)</h3>
+                    <p>The bot's moves are completely random, Based on the random import. Any available spot on the board is chosen at random, making a very easy opponent!</p>
+                </div>
+
+                 <div class="difficulty-info">
+                    <h3>Trained (Medium)</h3>
+                    <p>This bot uses a trained model to make strategic decisions. Based on a Q-learning reinforcement learning algorithm, The bot evaluated thousands of simulated games and uses a reward system to determine what moves would lead to wins against an opponent. Tough Opponent to beat, Have fun!</p>
+                </div>
+
+                <div class="difficulty-info">
+                    <h3>MiniMax (Hard)</h3>
+                    <p>The hardest bot uses the MiniMax algorithm to calculate all posible moves and outcomes. From the moves, the bot plays perfectly, meaning at best you will tie, but more than likely will lose, best of luck!</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

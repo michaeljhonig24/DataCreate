@@ -1,0 +1,231 @@
+<DOCTYPE! html>
+<html>
+    <head>
+        <link href="{{url_for('static', filename='css/CheckersDesign.css')}}" rel="stylesheet">
+        <script src="{{url_for('static', filename='js/Checkers.js')}}" defer></script>
+    </head>
+    <body>
+        <table id="game-board">
+            <thead>
+                <tr>
+                    <th colspan="8">Checkers</th>
+                </tr>
+                <tr>
+                    <th class="turn" colspan="8">Pick</th>
+                </tr>
+                <tr class="color-row">
+                    <th class="options"><button class="color-btn">⚪️</button></th>
+                    <th class="options"><button class="color-btn">⚫️</button></th>
+                </tr>
+                <tr class="difficulty-row">
+                    <th><button class="difficulty-btn" data-difficulty="easy">Shallow MiniMax <br>(Easy)</button></th>
+                    <th><button class="difficulty-btn" data-difficulty="medium">DQN <br>(Medium)</button></th>
+                    <th><button class="difficulty-btn" data-difficulty="hard">Deep MiniMax <br>(Hard)</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    
+                </tr>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                </tr>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                </tr>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                </tr>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                </tr>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                </tr>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                </tr>
+                <tr>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                    <td><button></button></td>
+                </tr>
+            </tbody>
+            <tfoot class="End">
+                <tr>
+                    <td class="Endgame" colspan="8">White wins!</td>
+                </tr>
+                <tr>
+                    <td class="Restart" colspan="8"><button class="Restartbtn">Play Again?</button></td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        <div class="capture-tracker">
+            <div class="player-captures">
+                <h3>Player Captures</h3>
+                <div class="capture-display">
+                    <div class="capture-item">
+                        <span class="capture-piece" id="player-regular-piece"></span>
+                        <span class="capture-count" id="player-regular-count">0</span>
+                    </div>
+                    <div class="capture-item">
+                        <span class="capture-piece" id="player-king-piece"></span>
+                        <span class="capture-count" id="player-king-count">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="opponent-captures">
+                <h3>Opponent Captures</h3>
+                <div class="capture-display">
+                    <div class="capture-item">
+                        <span class="capture-piece" id="opponent-regular-piece"></span>
+                        <span class="capture-count" id="opponent-regular-count">0</span>
+                    </div>
+                    <div class="capture-item">
+                        <span class="capture-piece" id="opponent-king-piece"></span>
+                        <span class="capture-count" id="opponent-king-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu info">
+            <span class="menu-icon">🏠</span>
+        </button>
+
+        <div class="menu-panel">
+            <div class="menu-content">
+                <h2>Menu</h2>
+            </div>
+
+            <div class="menu-info">
+                    <table>
+                        <tbody>
+                            <tr class="menu-row">
+                                <th class="menus">
+                                    <a href="{{url_for('main')}}">
+                                        <button class="menu-btn">Home</button>
+                                    </a>
+                                </th>
+                            </tr>
+                            <tr class="menu-row">
+                                <th class="menus">
+                                    <a href="{{url_for('tictactoe.game')}}">
+                                        <button class="menu-btn">Tic-Tac-Toe</button>
+                                    </a>
+                                </th>
+                            </tr>
+                            <tr class="menu-row">
+                                <th class="menus">
+                                    <a href="{{url_for('checkers.game')}}">
+                                    <button class="menu-btn">Checkers</button>
+                                    </a>
+                                </th>
+                            </tr>
+                            <tr class="menu-row">
+                                <th class="menus">
+                                    <a href="{{url_for('connectfour.game')}}">
+                                        <button class="menu-btn">Connect Four</button>
+                                    </a>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+
+        <button class="info-toggle" aria-label="Toggle difficulty information">
+            <span class="info-icon">ℹ️</span>
+        </button>
+
+        <div class="info-panel">
+            <div class="info-content">
+                <h2>Difficulty levels</h2>
+
+                <div class="difficulty-info">
+                    <h3>Easy</h3>
+                    <p>Shallow depth bot applies a minimum depth minimax algorithm. 
+                        The algorithm only looks one move ahead per turn,
+                        effectively picking the current best move,
+                        but also only accounts for the current board.
+                        Along with this, there is a 30% chance the bot moves 
+                        randomly as well, making a very simple opponent.</p>
+                </div>
+
+                <div class="difficulty-info">
+                    <h3>Medium</h3>
+                    <p>Medium bot learns from a Deep Q Network (DQN)
+                        trained through 10000+ simulated games.
+                        These games consisted of a combination of minimax opponents 
+                        and random exploration of moves in order to replicate
+                        the playstyle of an average player.</p>
+                </div>
+
+                <div class="difficulty-info">
+                    <h3>Hard</h3>
+                    <p>Deep searching bot uses minimax algorithm similar to the easy bot,
+                        with the caveat that it looks 5 moves ahead instead of just 1,
+                        making it pick a much more strategic move. This bot knows many possible
+                        outcomes they you might play, so beating it is not easy.
+                    </p>
+                </div>
+            </div>
+    </body>
+</html>
